@@ -1,0 +1,122 @@
+#body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(img/background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-size: 18px;
+  color: #fff;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+
+.main-div h1 {
+  font-size: 250%;
+  font-weight: 300;
+  text-align: center;
+}
+
+.list-group-item {
+  padding: 0;
+  /*height: 40px;*/
+}
+
+.change-month-form {
+  display: inline-block;
+  margin-top: 23px;
+}
+
+.change-month-form select {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #fff;
+}
+
+.month-div h2 {
+  padding-left: 0;
+  font-size: 200%;
+  font-weight: 300;
+}
+
+.total-div h2 {
+  margin: 30px 0;
+  padding: 0;
+  font-size: 220%;
+  font-weight: 300;
+  text-align: center;
+}
+
+.create-item-form {
+  display: block;
+}
+
+.create-item-form input[type=text],
+.create-item-form input[type=number],
+.create-item-form select {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #fff;
+}
+
+.create-item-form input::-webkit-input-placeholder{ /* WebKit, Blink, Edge */
+    color:    rgba(255, 255, 255, 0.6);
+}
+.create-item-form input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    rgba(255, 255, 255, 0.6);
+   opacity:  1;
+}
+.create-item-form input::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    rgba(255, 255, 255, 0.6);
+   opacity:  1;
+}
+.create-item-form input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    rgba(255, 255, 255, 0.6);
+}
+
+.expenses-div h2, .income-div h2 {
+  font-size: 180%;
+  font-weight: 300;
+  text-align: center;
+}
+
+.expense-item {
+  border: 1px solid red;
+}
+
+.income-item {
+  border: 1px solid green;
+}
+
+.expense-item, .income-item {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-left: none;
+  border-bottom: none;
+  padding-right: 5px;
+}
+
+.expense-item:last-child {
+  border-bottom: 1px solid red;
+}
+
+.income-item:last-child {
+  border-bottom: 1px solid green;
+}
+
+
+.btn-delete {
+  display: inline-block;
+  margin: 0;
+  margin-right: 5px;
+  height: 36px;
+}
+
+/* Media queries start here */
+@media only screen and (max-width: 540px) {
+  .main-div h1 {
+    font-size: 180% !important;
+  }
+
+  .total-div h2,
+  .month-div h2,
+  .expenses-div h2,
+  .income-div h2 {
+    font-size: 150% !important;
+  }
+}
