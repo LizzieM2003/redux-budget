@@ -8,7 +8,7 @@ export const GET_MONTH = 'GET_MONTH';
 export function initialiseApp(monthData) {
   return function(dispatch) {
     const { expenses, income, month, total } = monthData;
-    console.log('Action data', monthData);
+    // console.log('Action data', monthData);
     dispatch(getMonthExpenses(expenses));
     dispatch(getMonthIncome(income));
     dispatch(getNewMonth(month));
@@ -18,11 +18,12 @@ export function initialiseApp(monthData) {
 
 export function addNewItem(month, itemType, item) {
   return function(dispatch) {
-    console.log(month, itemType, item);
-    insertItem(month, itemType, item)
-      .then(monthData => {
+    // console.log(month, itemType, item);
+    const insertItemPromise = insertItem(month, itemType, item);
+      return insertItemPromise.then(monthData => {
+        // console.log('month data', monthData);
         const { month, expenses, income, total } = monthData;
-        console.log('Inserted item', monthData);
+        // console.log('Inserted item', monthData);
 
         // dispatch different actions depending on the itemType
         if (itemType === 'expenses') {
@@ -42,8 +43,8 @@ export function addNewItem(month, itemType, item) {
 export function deleteItem(month, itemType, itemId) {
   return function(dispatch) {
     console.log(month, itemType, itemId);
-    deleteDbItem(month, itemType, itemId)
-      .then(monthData => {
+    const deleteDbItemPromise = deleteDbItem(month, itemType, itemId);
+      return deleteDbItemPromise.then(monthData => {
         const { month, expenses, income, total } = monthData;
         console.log('Deleted item', monthData);
 

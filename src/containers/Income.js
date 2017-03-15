@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 
 import { deleteItem } from 'actions';
 
-class Income extends Component {
+export class Income extends Component {
 
-  renderExpenses() {
+  renderIncome() {
     return this.props.income.map(income => {
       return(
           <div key={income.id} className="list-group-item income-item">
@@ -26,7 +26,7 @@ class Income extends Component {
       <div className="col-md-6 col-sm-12 income-div">
         <h2>Income</h2>
         <ul className="list-group">
-          {this.renderExpenses()}
+          {this.renderIncome()}
         </ul>
       </div>
     );

@@ -1,4 +1,4 @@
-import { store } from '../app';
+import store  from 'configureStore';
 
 import { getMonth } from 'db';
 import { initialiseApp } from 'actions';
@@ -7,6 +7,7 @@ export function initialiseMonthData(month) {
   getMonth(month)
     .then(data => {
       if (data) {
+        console.log(data);
         store.dispatch(initialiseApp(data));
       } else {
         const newMonthData = {
@@ -15,6 +16,7 @@ export function initialiseMonthData(month) {
           month: month,
           total: 0
         }
+        console.log(newMonthData);
         store.dispatch(initialiseApp(newMonthData));
       }
     })

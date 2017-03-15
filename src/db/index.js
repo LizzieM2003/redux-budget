@@ -108,6 +108,18 @@ export function insertItem(key, itemType, item) {
       // console.log('Inside insertItem, value is', value);
       var request;
 
+      var initialItemsArr;
+
+      if (!value) {
+        // No object exists for this key/month so create blank object
+        value = {
+          month: key,
+          expenses: [],
+          income: [],
+          total: 0
+        };
+      }
+
       var initialItemsArr = value[itemType];
       // console.log('initialItemsArr', initialItemsArr);
 

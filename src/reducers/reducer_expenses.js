@@ -1,6 +1,6 @@
 const uuidV1 = require('uuid/v1');
 
-import { GET_MONTH_EXPENSES} from 'actions';
+import { GET_MONTH_EXPENSES } from 'actions';
 
 export default function(state = [], action) {
   switch(action.type) {

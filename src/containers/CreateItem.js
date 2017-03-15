@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { addNewItem } from 'actions';
 
-class CreateItem extends Component {
+export class CreateItem extends Component {
   constructor(props) {
     super(props);
     this.state = {

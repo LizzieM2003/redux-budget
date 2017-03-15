@@ -8,6 +8,7 @@ import { initialiseMonthData } from 'helpers';
 class Month extends Component {
 
   handleFormSubmit(event) {
+    event.preventDefault();
     const selectedMonth = this.refs.month.value;
     initialiseMonthData(selectedMonth);
   }
